@@ -45,11 +45,7 @@
 
 ### ERD
 
-![image](https://files.slack.com/files-pri/T0351JZQ0-F04C4A6KLM7/image.png)
-
-### Component Hierarchy Diagram
-
-![image]()
+![ERD](/images/image.png)
 
 ---
 
