@@ -12,12 +12,12 @@ Router.get(
   middleware.verifyToken,
   authController.CheckSession
 )
-Router.put(
+/* Router.put(
   '/:user_id',
   middleware.stripToken,
   middleware.verifyToken,
-  userController.UpdateUser
-)
+  authController.updatePassword
+) */
 Router.delete('/:user_id', userController.DeleteUser)
 
 module.exports = Router
