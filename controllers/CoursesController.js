@@ -8,6 +8,17 @@ const GetAllCourses = async (req, res) => {
     throw error
   }
 }
+const GetCourseById = async (req, res) => {
+  try {
+    let courseId = parseInt(req.params.course_id)
+    const course = await Course.findAll({
+      where: { id: courseId }
+    })
+    res.send(course)
+  } catch (error) {
+    throw error
+  }
+}
 
 const CreateCourse = async (req, res) => {
   try {
@@ -45,5 +56,6 @@ module.exports = {
   GetAllCourses,
   CreateCourse,
   UpdateCourse,
-  DeleteCourse
+  DeleteCourse,
+  GetCourseById
 }
