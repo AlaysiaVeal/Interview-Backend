@@ -11,36 +11,34 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Student -
-    Course -
-    Grades.init(
-      {
-        gradeId: {
-          type: DataTypes.INTEGER,
-          references: {
-            model: 'grades',
-            key: 'id'
-          }
-        },
-        studentId: {
-          type: DataTypes.INTEGER,
-          references: {
-            model: 'students',
-            key: 'id'
-          }
-        },
-        courseId: {
-          type: DataTypes.INTEGER,
-          references: {
-            model: 'courses',
-            key: 'id'
-          }
+  StudentCourseGrades.init(
+    {
+      gradeId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'grades',
+          key: 'id'
         }
       },
-      {
-        sequelize,
-        modelName: 'student_course_grades'
+      studentId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'student',
+          key: 'id'
+        }
+      },
+      courseId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'courses',
+          key: 'id'
+        }
       }
-    )
+    },
+    {
+      sequelize,
+      modelName: 'student_course_grades'
+    }
+  )
   return StudentCourseGrades
 }
