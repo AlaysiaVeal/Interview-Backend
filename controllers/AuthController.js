@@ -29,8 +29,6 @@ const Register = async (req, res) => {
     const { email, password, firstName, lastName, username } = req.body
     let passwordDigest = await middleware.hashPassword(password)
     const user = await User.create({
-      firstName,
-      lastName,
       email,
       passwordDigest,
       username

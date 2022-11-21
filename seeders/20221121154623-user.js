@@ -6,21 +6,21 @@ module.exports = {
       {
         username: 'Teach1',
         email: 'teach1@teach.com',
-        password: '1234',
+        passwordDigest: '1234',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         username: 'Teach2',
         email: 'teach2@teach.com',
-        password: '1234',
+        passwordDigest: '1234',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         username: 'Teach3',
         email: 'teach3@teach.com',
-        password: '1234',
+        passwordDigest: '1234',
         createdAt: new Date(),
         updatedAt: new Date()
       }
