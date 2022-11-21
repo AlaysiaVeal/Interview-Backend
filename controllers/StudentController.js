@@ -8,6 +8,17 @@ const GetAllStudents = async (req, res) => {
     throw error
   }
 }
+const GetStudentById = async (req, res) => {
+  try {
+    let studentId = parseInt(req.params.student_id)
+    const student = await Student.findAll({
+      where: { id: studentId }
+    })
+    res.send(student)
+  } catch (error) {
+    throw error
+  }
+}
 
 const CreateStudent = async (req, res) => {
   try {
@@ -30,5 +41,6 @@ const DeleteStudent = async (req, res) => {
 module.exports = {
   GetAllStudents,
   CreateStudent,
-  DeleteStudent
+  DeleteStudent,
+  GetStudentById
 }

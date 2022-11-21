@@ -8,7 +8,17 @@ const GetAllGrades = async (req, res) => {
     throw error
   }
 }
-
+const GetGradeByStudentId = async (req, res) => {
+  try {
+    let studentId = parseInt(req.params.student_id)
+    const student = await Grade.findAll({
+      where: { studentId: studentId }
+    })
+    res.send(student)
+  } catch (error) {
+    throw error
+  }
+}
 const CreateGrade = async (req, res) => {
   try {
     let gradeBody = { ...req.body }
@@ -45,5 +55,6 @@ module.exports = {
   GetAllGrades,
   CreateGrade,
   UpdateGrade,
-  DeleteGrade
+  DeleteGrade,
+  GetGradeByStudentId
 }
