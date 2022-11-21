@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       gradeId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
           model: 'grades',
           key: 'id'
@@ -22,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       studentId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
           model: 'student',
           key: 'id'
@@ -29,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       courseId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
           model: 'courses',
           key: 'id'
@@ -37,7 +40,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'student_course_grades'
+      modelName: 'StudentCourseGrades',
+      tableName: 'student_courses_grades'
     }
   )
   return StudentCourseGrades
