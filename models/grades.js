@@ -1,21 +1,21 @@
 'use strict'
 const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
-  class Grades extends Model {
+  class Grade extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Grades.belongsToMany(models.Student, {
-        through: models.StudentCourseGrades,
+      Grade.belongsToMany(models.Student, {
+        through: models.Student_course_grade,
         as: 'grades',
         foreignKey: 'gradeId'
       })
     }
   }
-  Grades.init(
+  Grade.init(
     {
       studentId: {
         type: DataTypes.INTEGER,
@@ -30,9 +30,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Grades',
+      modelName: 'Grade',
       tableName: 'grades'
     }
   )
-  return Grades
+  return Grade
 }

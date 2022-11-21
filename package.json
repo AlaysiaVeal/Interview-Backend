@@ -4,7 +4,9 @@
   "description": "## Date: 11/20/22",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "npm install && npx sequelize-cli db:migrate"
   },
   "repository": {
     "type": "git",
