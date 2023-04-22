@@ -2,15 +2,16 @@ require('dotenv').config()
 
 module.exports = {
   development: {
-    database: interview_development,
-    dialect: postgres
+    database: 'interview_development',
+    dialect: 'postgres'
   },
   test: {
-    database: interview_test,
-    dialect: postgres
+    database: 'interview_test',
+    dialect: 'postgres'
   },
   production: {
-    database: interview_production,
+    use_env_variable: 'DATABASE_URL',
+    database: 'interview_production',
     dialect: postgres,
     dialectOptions: {
       ssl: {
